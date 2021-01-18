@@ -1,9 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.example</groupId>
-    <artifactId>spark-scala-app</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+
+    <groupId>org.example</groupId>
+    <artifactId>Spark-Elastic-Search</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -11,8 +14,8 @@
         <encoding>UTF-8</encoding>
         <scala.tools.version>2.11</scala.tools.version>
         <scala.version>2.11.8</scala.version>
-        <spark.version>2.2.0</spark.version>
-        <spark-testing-base.version>2.2.0_0.8.0</spark-testing-base.version>
+        <spark.version>2.1.0</spark.version>
+<!--        <spark-testing-base.version>2.2.0_0.8.0</spark-testing-base.version>-->
     </properties>
 
     <dependencies>
@@ -25,15 +28,20 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_${scala.tools.version}</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_${scala.tools.version}</artifactId>
             <version>${spark.version}</version>
-            <scope>provided</scope>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.elasticsearch/elasticsearch-hadoop -->
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch-hadoop</artifactId>
+<!--            <version>7.10.2</version>-->
+            <version>5.2.0</version>
+        </dependency>
     </dependencies>
 
     <build>

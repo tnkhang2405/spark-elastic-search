@@ -27,9 +27,9 @@ object SparkElasticSearch {
     val numbers = Map("one" -> 1, "two" -> 2, "three" -> 3)
     val airports = Map("arrival" -> "Otopeni", "SFO" -> "San Fran")
 
-//    val rdd = spark.sparkContext.makeRDD(
-//      Seq(numbers, airports)
-//    )
-//    EsSpark.saveToEs(rdd, "spark/docs")
+    val rdd = spark.sparkContext.makeRDD(
+      Seq(numbers, airports)
+    )
+    EsSpark.saveToEs(rdd, "spark/docs")
   }
 }
